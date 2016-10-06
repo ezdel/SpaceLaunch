@@ -1,0 +1,12 @@
+CREATE DATABASE spaceship_db;
+
+USE spaceship_db;
+
+CREATE TABLE spaceships
+(
+	id INT NOT NULL AUTO_INCREMENT,
+	passengers VARCHAR(255) NOT NULL,
+	launched BOOLEAN DEFAULT false,
+	date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (id)
+);
