@@ -1,7 +1,7 @@
 var orm = require('../config/orm.js');
 
 
-var spaceships = {
+var spaceship = {
 
 	selectAll: function (cb) {
 		orm.selectAll('spaceships', function (res) {
@@ -10,16 +10,16 @@ var spaceships = {
 	},
 
 	insertOne: function (cols, vals, cb) {
-		orm.create('spaceships', cols, vals, function (res) {
+		orm.insertOne('spaceships', cols, vals, function (res) {
 			cb(res);
 		});
 	},
 
-	updateOne: function (objColVals, condition, cd) {
-		orm.update('spaceships', objColVals, condition, function(res) {
+	updateOne: function (objColVals, condition, cb) {
+		orm.updateOne('spaceships', objColVals, condition, function(res) {
 			cb(res);
 		});
 	}
 };
 
-module.exports = spaceships;
+module.exports = spaceship;
