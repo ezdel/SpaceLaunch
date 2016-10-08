@@ -9,24 +9,19 @@ router.get('/', function (req, res) {
 
 router.get('/spaceships', function (req, res) {
 	spaceship.selectAll(function (data) {
-		console.log(data);
 		var spaceshipObject = { ships: data };
-		console.log(spaceshipObject);
 		res.render('index', spaceshipObject);
 	});
 });
 
 router.post('/spaceships/create', function (req, res) {
-	console.log(req.body.passengers);
-	spaceship.insertOne(['passengers', 'launched'], [req.body.passengers, 'false'], function () {
+	spaceship.insertOne('passengers', req.body.passengers, function () {
 		res.redirect('/spaceships');
 	});
 });
 
 router.put('/spaceships/update/:id', function (req, res) {
 	var condition = 'id = ' + req.params.id;
-
-	console.log('condition', condition);
 
 	spaceship.updateOne({ launched: req.body.launched }, condition, function () {
 		res.redirect('/spaceships');

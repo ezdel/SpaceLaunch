@@ -1,8 +1,39 @@
 body {
 	background-color: teal;
+	font-family: 'Revalia', cursive;
+	color: silver;
+	margin: 10px;
+}
+
+h1 {
+	text-align: center;
+	color: red;
 }
 
 img {
+	margin: auto;
+	display: block;
 	height: 200px;
+}
+
+li {
+	margin: 10px;
+	padding: 5px;
+	border: 1px solid black;
+	list-style: url('../img/rocket.png') inside;
+	width: 400px;
+}
+
+.form-group {
+	padding: 15px;
+	margin: auto;
+	display: inline-block;
+	text-align: center;
+}
+ul {
+ 	display: inline-block;
+ }
+#launch {
+	margin-top: -30px;
 }
 
